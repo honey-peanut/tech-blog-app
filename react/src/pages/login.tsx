@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function MainPage() {
   const navigate = useNavigate();
   const handleEvent = () => {
-    navigate("/main");
+    navigate("/");
   };
 
   const handleSubmit = () => {
@@ -25,6 +25,7 @@ export default function MainPage() {
         }}
       >
         <Box
+          component="form"
           className="topbox"
           sx={{
             width: "600px",
@@ -59,12 +60,11 @@ export default function MainPage() {
                     mb: "20px",
                     width: "400px",
                   }}
-                  error={true}
                 />
               </Stack>
               <Stack alignItems="center">
                 <TextField
-                  component="form"
+                  type="password"
                   label="PASSWORD"
                   sx={{
                     mb: "20px",
@@ -72,11 +72,7 @@ export default function MainPage() {
                   }}
                 />
               </Stack>
-              <Button
-                component="form"
-                onClick={handleSubmit}
-                variant="contained"
-              >
+              <Button type="submit" onClick={handleSubmit} variant="contained">
                 Sign in
               </Button>
             </Box>
